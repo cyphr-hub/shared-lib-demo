@@ -2,5 +2,5 @@ def call(String user, String pass, String jobName, String projectID, Boolean boo
     script = libraryResource '../resources/TM.py'
     writeFile file:'TM.py', text:script
     sh('echo "Here"')
-    sh "python3 TM.py ${user} ${pass} \"${jobName}\" ${projecID} ${bool}"
+    sh "python3 TM.py ${user} ${pass} \"${jobName}\" ${projectID} ${bool}"
 }
