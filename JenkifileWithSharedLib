@@ -32,7 +32,7 @@ pipeline {
 			    println "ThreatModeler ProjectId not found in JSON."
 			    return
 			}
-			TM("nikhsehgal@deloitte.com", "Containers@765", JOB_NAME, projectId, bool)
+			TM(CREDS_USR, CREDS_PSW, JOB_NAME, projectId, bool)
                 	sh '''#!/bin/bash -l
                 	response=$(python3 resources/TM.py $CREDS_USR $CREDS_PSW "$JOB_NAME" $projectId ''' + bool + ''')
                 	#echo $response
