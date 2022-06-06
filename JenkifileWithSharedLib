@@ -25,6 +25,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {    
 		script {
+			call("2077")
 			Boolean bool = params.ValidateThreats
 			
 			if(projectId=="null") {
