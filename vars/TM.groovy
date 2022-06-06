@@ -1,3 +1,4 @@
 def call(String projectID){
-  echo projectID
+    String script = libraryResource(../resources/TM.py)
+    echo script
 }
