@@ -1,3 +1,3 @@
-def call(projectID){
-  projectID = $projectID   
+def call(String projectID){
+  echo projectID
 }
