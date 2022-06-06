@@ -34,7 +34,7 @@ pipeline {
 			}
 			
                 	sh '''#!/bin/bash -l
-			TM($CREDS_USR, $CREDS_PSW, "$JOB_NAME", $projectId, $bool)
+			TM(CREDS_USR, CREDS_PSW, JOB_NAME, projectId, bool)
                 	response=$(python3 resources/TM.py $CREDS_USR $CREDS_PSW "$JOB_NAME" $projectId ''' + bool + ''')
                 	#echo $response
 			
