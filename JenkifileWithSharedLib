@@ -25,7 +25,6 @@ pipeline {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {    
 		script {
-			TM("2077")
 			Boolean bool = params.ValidateThreats
 			
 			if(projectId=="null") {
@@ -35,6 +34,7 @@ pipeline {
 			}
 			
                 	sh '''#!/bin/bash -l
+			TM($CREDS_USR, $CREDS_PSW, "$JOB_NAME", $projectId, $bool)
                 	response=$(python3 resources/TM.py $CREDS_USR $CREDS_PSW "$JOB_NAME" $projectId ''' + bool + ''')
                 	#echo $response
 			
