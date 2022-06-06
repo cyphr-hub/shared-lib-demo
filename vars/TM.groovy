@@ -1,3 +1,3 @@
-def call(TM.py){
-
+def call(projectID){
+  projectID = $projectID   
 }
