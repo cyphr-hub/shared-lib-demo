@@ -32,14 +32,16 @@ pipeline {
 			    println "ThreatModeler ProjectId not found in JSON."
 			    return
 			}
+			
 			def response = TM(CREDS_USR, CREDS_PSW, JOB_NAME, projectId, bool)
 			echo response
+			
                 	sh '''#!/bin/bash -l
                 	#response=$(python3 resources/TM.py $CREDS_USR $CREDS_PSW "$JOB_NAME" $projectId ''' + bool + ''')
                 	#echo $response
 			
-                	approvalResponse=$(echo $(echo "$response" | cut -d "\n" -f 1))
-			threatsResponse=$(echo $(echo "$response" | cut -d "\n" -f 2))
+                	approvalResponse=$(echo $(echo "'''+response+'''" | cut -d "\n" -f 1))
+			threatsResponse=$(echo $(echo "'''+response+'''" | cut -d "\n" -f 2))
 			
                 	approvalSuccessful="ThreatModeler Approval Validation Successful."
 			threatsDetected="Threats Detected in ThreatModeler"
