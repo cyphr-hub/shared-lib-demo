@@ -21,7 +21,7 @@ pipeline {
             }
         }
         
-        stage('Threat Model APPROVAL Validation') {
+        stage('Threat Model Validation') {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {    
 		script {
