@@ -4,8 +4,7 @@ def call(String user, String pass, String jobName, String projectID, Boolean boo
     def output = sh returnStdout:true, script: 'python3 TM.py ' + user + ' ' +  pass + ' "' + jobName + '" ' + projectID + ' ' + bool
     def exists = fileExists 'TM.py'
     if(exists) {
-        sh '''
-        set +x
+        sh '''#!/bin/bash +x
         rm -rf TM.py'''
     }
     return output
