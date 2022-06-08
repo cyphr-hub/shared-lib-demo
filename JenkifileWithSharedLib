@@ -10,7 +10,7 @@ pipeline {
 	environment { 
             CREDS = credentials('TMcreds') 
 	    def config = readJSON file: 'resources/TM.json'
-            projectId = "${config."$JOB_NAME"}"
+            projectId = "${config."ProjectId"}"
         }
 	stages {
     
