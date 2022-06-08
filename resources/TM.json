@@ -1,5 +1,9 @@
 {
-  "TM pipeline 2": 2078,
-  "TM pipeline": 2079,
-    "ProjectId": 2077
+  "artifactType": JAVA,
+  "sonarqube": 2079,
+  "ProjectId": 2077,
+  "defaultEmails":[
+      "sample@kp.org"
+  ],
+  "imageDir":TMdirectory
 }
