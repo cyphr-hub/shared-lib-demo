@@ -1,9 +1,9 @@
 {
-  "artifactType": JAVA,
-  "sonarqube": 2079,
+  "artifactType": "JAVA",
+  "sonarqube": true,
   "ProjectId": 2077,
   "defaultEmails":[
       "sample@kp.org"
   ],
-  "imageDir":TMdirectory
+  "imageDir":"TMdirectory"
 }
