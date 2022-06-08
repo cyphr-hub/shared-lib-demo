@@ -36,8 +36,6 @@ pipeline {
 			def response = TM(CREDS_USR, CREDS_PSW, JOB_NAME, projectId, bool)
 			
                 	sh '''#!/bin/bash -l
-                	#response=$(python3 resources/TM.py $CREDS_USR $CREDS_PSW "$JOB_NAME" $projectId ''' + bool + ''')
-                	#echo $response
 			
                 	approvalResponse=$(echo $(echo "'''+response+'''" | cut -d "\n" -f 1))
 			threatsResponse=$(echo $(echo "'''+response+'''" | cut -d "\n" -f 2))
