@@ -1,21 +1,17 @@
 @Library('shared-lib-demo') _
-
 pipeline {
 	agent any
 	
 	parameters {
 		booleanParam(name: 'ValidateThreats', defaultValue: false, description: 'Perform ThreatModeler Threats Validation.')
-	}
-	
+	}	
 	environment { 
             CREDS = credentials('TMcreds') 
 	    def config = readJSON file: 'resources/TM.json'
             projectId = "${config."$JOB_NAME"}"
         }
 	stages {
-    
-    
-        stage('Building Pilot App') {
+          stage('Building Pilot App') {
             steps {
                 sh 'exit 0'
             }
