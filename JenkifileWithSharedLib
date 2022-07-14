@@ -61,6 +61,7 @@ pipeline {
 			then
 				if [[ $threatsResponse == $threatsDetected ]]
 				then
+					echo $threatsResponse
 					statusCode=1
 				else
 					statusCode=0
