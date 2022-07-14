@@ -52,12 +52,18 @@ pipeline {
                     		statusCode=1
                  	fi
 			
-			if [[ $threatsResponse != "" ]]
+			if [[ $approvalResponse == $approvalSuccessful ] && [ $threatsResponse == "" ]]
 			then
-				echo $threatsResponse
+				statusCode=0
+			fi
+			
+			if [[ $approvalResponse == $approvalSuccessful ] && [ $threatsResponse != "" ]]
+			then
 				if [[ $threatsResponse == $threatsDetected ]]
 				then
 					statusCode=1
+				else
+					statusCode=0
 				fi
 			fi
 			
