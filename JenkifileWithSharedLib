@@ -52,12 +52,12 @@ pipeline {
                     		statusCode=1
                  	fi
 			
-			if [[ $approvalResponse == $approvalSuccessful ] && [ $threatsResponse == "" ]]
+			if [[ $approvalResponse == $approvalSuccessful ]] && [[ $threatsResponse == "" ]]
 			then
 				statusCode=0
 			fi
 			
-			if [[ $approvalResponse == $approvalSuccessful ] && [ $threatsResponse != "" ]]
+			if [[ $approvalResponse == $approvalSuccessful ]] && [[ $threatsResponse != "" ]]
 			then
 				if [[ $threatsResponse == $threatsDetected ]]
 				then
