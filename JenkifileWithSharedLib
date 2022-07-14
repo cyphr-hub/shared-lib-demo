@@ -1,4 +1,4 @@
-@Library('shared-lib-demo') _
+@Library('threatmodeler-jenkins-demo') _
 
 pipeline {
 	agent any
