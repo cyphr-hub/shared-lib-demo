@@ -49,11 +49,13 @@ pipeline {
 			
                  	if [[ $approvalResponse != $approvalSuccessful ]]
 			then
-                    		statusCode=1
+                    		echo "test1"
+				statusCode=1
                  	fi
 			
 			if [[ $approvalResponse == $approvalSuccessful ]] && [[ $threatsResponse == "" ]]
 			then
+				echo "test2"
 				statusCode=0
 			fi
 			
@@ -61,9 +63,10 @@ pipeline {
 			then
 				if [[ $threatsResponse == $threatsDetected ]]
 				then
-					echo $threatsResponse
+					echo "test3"
 					statusCode=1
 				else
+					echo "test4"
 					statusCode=0
 				fi
 			fi
